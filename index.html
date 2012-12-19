@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+
+	<title>FactoryTalk Cloud Platform</title>
+
+	<!--link href="js/ext/dojo/1.8.2/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet" /-->
+	<link rel="stylesheet" href="css/style.css"/>
+	
+	<!-- configure and load dojo -->
+    <script src="js/ext/dojo/1.8.2/dojo/dojo.js" data-dojo-config="isDebug:true, async:true"></script>
+    <script>
+    	require(["dojox/mobile/parser", "dojox/mobile", "dojox/mobile/deviceTheme", "dojox/mobile/compat", "dojox/mobile/TextBox", "dojox/mobile/Button"],
+    	function(parser) {
+    		parser.parse();
+    	});
+    </script>
+</head>
+<body>
+	<div id="loginView" data-dojo-type="dojox.mobile.View" style="width:100%">
+		<form name="loginForm" id="loginForm">
+			<table>
+				<tr>
+					<td>
+						<button class="google" id="btnGoogle" data-dojo-type="dojox.mobile.Button"></button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button class="yahoo" id="btnYahoo" data-dojo-type="dojox.mobile.Button"></button>
+					</td>
+				</tr>
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" data-dojo-type="dojox.mobile.TextBox" name="username"></input></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" data-dojo-type="dojox.mobile.TextBox" name="password"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

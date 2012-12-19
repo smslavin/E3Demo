@@ -1,0 +1,14 @@
+button {
+	width: 97px;
+	height: 40px;
+}
+
+button.google {
+	background-color: white;
+	background-image: url(../images/button-google.png);
+}
+
+button.yahoo {
+	background-color: white;
+	background-image: url(../images/button-yahoo.png);
+}
