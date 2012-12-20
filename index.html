@@ -8,20 +8,27 @@
 
 	<title>FactoryTalk Cloud Platform</title>
 
-	<!--link href="js/ext/dojo/1.8.2/dojox/mobile/themes/iphone/iphone.css" rel="stylesheet" /-->
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="js/e3demo/resources/style.css"/>
 	
-	<!-- configure and load dojo -->
-    <script src="js/ext/dojo/1.8.2/dojo/dojo.js" data-dojo-config="isDebug:true, async:true"></script>
-    <script>
-    	require(["dojox/mobile/parser", "dojox/mobile", "dojox/mobile/deviceTheme", "dojox/mobile/compat", "dojox/mobile/TextBox", "dojox/mobile/Button"],
-    	function(parser) {
-    		parser.parse();
-    	});
-    </script>
+	<script type="text/javascript">			
+		var dojoConfig = (function(){
+			var base = location.href.split("/");
+			base.pop();
+			base = base.join("/");
+				
+			return {
+				async: true,
+				isDebug: true
+				//packages: [{
+				//	name: "e3demo",
+				//	location: base + "/js/e3demo"
+				//}]
+			};
+		})();			
+	</script>
 </head>
 <body>
-	<div id="loginView" data-dojo-type="dojox.mobile.View" style="width:100%">
+	<div class="center" id="loginView" data-dojo-type="dojox.mobile.View" style="width:100%">
 		<form name="loginForm" id="loginForm">
 			<table>
 				<tr>
@@ -45,5 +52,23 @@
 			</table>
 		</form>
 	</div>
+
+	<!-- configure and load dojo -->
+    <script src="js/dojo/dojo.js" data-dojo-config="isDebug:true, async:true"></script>
+    <script>
+    	(function() {
+    		require(["dojox/mobile/deviceTheme"], function(dm) {
+    			require(["dojox/mobile/parser", "dojox/mobile", "dojox/mobile/deviceTheme", "dojox/mobile/compat", "dojox/mobile/TextBox", "dojox/mobile/Button"],
+    			function(parser) {
+    				// if android…
+    				if (dm.currentTheme == "android") {
+    				}
+    				
+    				// parse the page
+    				parser.parse();
+		    	});
+    		});
+    	})();    	    	
+    </script>
 </body>
 </html>
